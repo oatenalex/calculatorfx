@@ -17,9 +17,42 @@ public class FirstFx extends Application {
     Button button4;
     Button button5;
     TextField txt;
+    String inst = " input 2nd # \n result: ";
     int result;
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public void calculate_result(ArrayList<String> equation, String type) {
+        if(equation.isEmpty()) {
+            equation.add(txt.getText());
+            if(type.equals("+"))
+                equation.add("+");
+            if(type.equals("-"))
+                equation.add("-");
+            if(type.equals("*"))
+                equation.add("*");
+            if(type.equals("/"))
+                equation.add("/");
+            result = Integer.parseInt(txt.getText());
+            label1.setText(inst + result);
+            txt.clear();
+        }
+        else {
+            if(equation.contains("+"))
+                result = Integer.parseInt(equation.get(0)) + Integer.parseInt(txt.getText());
+            if(equation.contains("-"))
+                result = Integer.parseInt(equation.get(0)) - Integer.parseInt(txt.getText());
+            if(equation.contains("*"))
+                result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
+            if(equation.contains("/"))
+                result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
+            equation.clear();
+            equation.add(Integer.toString(result));
+            equation.add("+");
+            txt.clear();
+            label1.setText(inst + result);
+        }
     }
 
     @Override
@@ -57,116 +90,25 @@ public class FirstFx extends Application {
         button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(equation.isEmpty()) {
-                    equation.add(txt.getText());
-                    equation.add("+");
-                    result = Integer.parseInt(txt.getText());
-                    label1.setText(" input 2nd # \n result: " + result);
-                    txt.clear();
-                }
-                else {
-                    if(equation.contains("+"))
-                        result = Integer.parseInt(equation.get(0)) + Integer.parseInt(txt.getText());
-                    if(equation.contains("-"))
-                        result = Integer.parseInt(equation.get(0)) - Integer.parseInt(txt.getText());
-                    if(equation.contains("*"))
-                        result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
-                    if(equation.contains("/"))
-                        result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
-                    equation.clear();
-                    equation.add(Integer.toString(result));
-                    equation.add("+");
-                    txt.clear();
-                    label1.setText(" input 2nd # \n result: " + result);
-                }
-                System.out.println(equation);
+                calculate_result(equation, "+");
             }
         });
         button2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //check if array already has operand in it; if yes, clear array, put result in first index, set txt to result
-                if(equation.isEmpty()) {
-                    equation.add(txt.getText());
-                    equation.add("-");
-                    result = Integer.parseInt(txt.getText());
-                    label1.setText(" input 2nd # \n result: " + result);
-                    txt.clear();
-                }
-                else {
-                    if(equation.contains("+"))
-                        result = Integer.parseInt(equation.get(0)) + Integer.parseInt(txt.getText());
-                    if(equation.contains("-"))
-                        result = Integer.parseInt(equation.get(0)) - Integer.parseInt(txt.getText());
-                    if(equation.contains("*"))
-                        result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
-                    if(equation.contains("/"))
-                        result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
-                    equation.clear();
-                    equation.add(Integer.toString(result));
-                    equation.add("-");
-                    txt.clear();
-                    label1.setText(" input 2nd # \n result: " + result);
-                }
-                System.out.println(equation);
+                calculate_result(equation, "-");
             }
         });
         button3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //check if array already has operand in it; if yes, clear array, put result in first index, set txt to result
-                if(equation.isEmpty()) {
-                    equation.add(txt.getText());
-                    equation.add("*");
-                    result = Integer.parseInt(txt.getText());
-                    label1.setText(" input 2nd # \n result: " + result);
-                    txt.clear();
-                }
-                else {
-                    if(equation.contains("+"))
-                        result = Integer.parseInt(equation.get(0)) + Integer.parseInt(txt.getText());
-                    if(equation.contains("-"))
-                        result = Integer.parseInt(equation.get(0)) - Integer.parseInt(txt.getText());
-                    if(equation.contains("*"))
-                        result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
-                    if(equation.contains("/"))
-                        result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
-                    equation.clear();
-                    equation.add(Integer.toString(result));
-                    equation.add("*");
-                    txt.clear();
-                    label1.setText(" input 2nd # \n result: " + result);
-                }
-                System.out.println(equation);
+                calculate_result(equation, "*");
             }
         });
         button4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //check if array already has operand in it; if yes, clear array, put result in first index, set txt to result
-                if(equation.isEmpty()) {
-                    equation.add(txt.getText());
-                    equation.add("/");
-                    result = Integer.parseInt(txt.getText());
-                    label1.setText(" input 2nd # \n result: " + result);
-                    txt.clear();
-                }
-                else {
-                    if(equation.contains("+"))
-                        result = Integer.parseInt(equation.get(0)) + Integer.parseInt(txt.getText());
-                    if(equation.contains("-"))
-                        result = Integer.parseInt(equation.get(0)) - Integer.parseInt(txt.getText());
-                    if(equation.contains("*"))
-                        result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
-                    if(equation.contains("/"))
-                        result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
-                    equation.clear();
-                    equation.add(Integer.toString(result));
-                    equation.add("/");
-                    txt.clear();
-                    label1.setText(" input 2nd # \n result: " + result);
-                }
-                System.out.println(equation);
+                calculate_result(equation, "/");
             }
         });
         button5.setOnAction(new EventHandler<ActionEvent>() {
