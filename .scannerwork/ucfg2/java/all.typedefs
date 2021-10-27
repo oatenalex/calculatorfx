@@ -17,12 +17,12 @@ getClass(),java.lang.Object#getClass()Ljava/lang/Class;5
 wait()java.lang.Object#wait()V*
 
 hashCode()java.lang.Object#hashCode()I
-Applicationjava.lang.Objectõ
+Applicationjava.lang.Object¿
  com.example.calculatorfx.FirstFxApplicationn
 $calculate_result(Ljava/lang/String;)Fcom.example.calculatorfx.FirstFx#calculate_result(Ljava/lang/String;)V6
-<init>()*com.example.calculatorfx.FirstFx#<init>()VX
-main([Ljava/lang/String;);com.example.calculatorfx.FirstFx#main([Ljava/lang/String;)Vh
-!sonar_cloud_more_like_sonar_bad()Ccom.example.calculatorfx.FirstFx#sonar_cloud_more_like_sonar_bad()V÷
+<init>()*com.example.calculatorfx.FirstFx#<init>()Vå
+3sonar_cloud_more_like_sonar_bad(Ljava/lang/String;)Ucom.example.calculatorfx.FirstFx#sonar_cloud_more_like_sonar_bad(Ljava/lang/String;)VX
+main([Ljava/lang/String;);com.example.calculatorfx.FirstFx#main([Ljava/lang/String;)V÷
 java.lang.Iterablejava.lang.Objectd
 &forEach(Ljava/util/function/Consumer;):java.lang.Iterable#forEach(Ljava/util/function/Consumer;)VH
 spliterator()7java.lang.Iterable#spliterator()Ljava/util/Spliterator;å
@@ -353,12 +353,12 @@ valueOf(J)-java.lang.String#valueOf(J)Ljava/lang/String;2
 value()java.lang.String#value()[B`
 %regionMatches(ZILjava/lang/String;II)7java.lang.String#regionMatches(ZILjava/lang/String;II)Z 
 EventHandlerjava.lang.Object7
-'Lcom/example/calculatorfx/FirstFx$2591;EventHandler7
-'Lcom/example/calculatorfx/FirstFx$3542;EventHandler7
-'Lcom/example/calculatorfx/FirstFx$3743;EventHandler7
-'Lcom/example/calculatorfx/FirstFx$3944;EventHandler7
-'Lcom/example/calculatorfx/FirstFx$4145;EventHandler7
-'Lcom/example/calculatorfx/FirstFx$4346;EventHandler‹
+'Lcom/example/calculatorfx/FirstFx$2607;EventHandler7
+'Lcom/example/calculatorfx/FirstFx$3558;EventHandler7
+'Lcom/example/calculatorfx/FirstFx$3759;EventHandler7
+'Lcom/example/calculatorfx/FirstFx$3960;EventHandler7
+'Lcom/example/calculatorfx/FirstFx$4161;EventHandler7
+'Lcom/example/calculatorfx/FirstFx$4362;EventHandler‹
 )com.example.calculatorfx.HelloApplicationApplication?
 <init>()3com.example.calculatorfx.HelloApplication#<init>()Va
 main([Ljava/lang/String;)Dcom.example.calculatorfx.HelloApplication#main([Ljava/lang/String;)V‘

@@ -3,5 +3,5 @@ projectKey=oatenalex_calculatorfx
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.24335
 dashboardUrl=https://sonarcloud.io/dashboard?id=oatenalex_calculatorfx
-ceTaskId=AXzBnCEdDhroFetUwo9w
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXzBnCEdDhroFetUwo9w
+ceTaskId=AXzBtEPeu6AVQYl-pWb9
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXzBtEPeu6AVQYl-pWb9

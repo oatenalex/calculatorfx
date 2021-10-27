@@ -33,7 +33,6 @@ public class FirstFx extends Application {
             result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
         if(equation.contains("/"))
             result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
-        System.out.println(equation);
         equation.clear();
         equation.add(Integer.toString(result));
         equation.add(type);
