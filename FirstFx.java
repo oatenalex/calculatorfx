@@ -19,11 +19,28 @@ public class FirstFx extends Application {
     TextField txt;
     String inst = " input 2nd # \n result: ";
     int result;
+    ArrayList<String> equation = new ArrayList<>();
     public static void main(String[] args) {
         launch(args);
     }
 
-    public void calculate_result(ArrayList<String> equation, String type) {
+    public void sonar_cloud_more_like_sonar_bad() {
+        if(equation.contains("+"))
+            result = Integer.parseInt(equation.get(0)) + Integer.parseInt(txt.getText());
+        if(equation.contains("-"))
+            result = Integer.parseInt(equation.get(0)) - Integer.parseInt(txt.getText());
+        if(equation.contains("*"))
+            result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
+        if(equation.contains("/"))
+            result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
+        equation.clear();
+        equation.add(Integer.toString(result));
+        equation.add("+");
+        txt.clear();
+        label1.setText(inst + result);
+    }
+
+    public void calculate_result(String type) {
         if(equation.isEmpty()) {
             equation.add(txt.getText());
             if(type.equals("+"))
@@ -39,19 +56,7 @@ public class FirstFx extends Application {
             txt.clear();
         }
         else {
-            if(equation.contains("+"))
-                result = Integer.parseInt(equation.get(0)) + Integer.parseInt(txt.getText());
-            if(equation.contains("-"))
-                result = Integer.parseInt(equation.get(0)) - Integer.parseInt(txt.getText());
-            if(equation.contains("*"))
-                result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
-            if(equation.contains("/"))
-                result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
-            equation.clear();
-            equation.add(Integer.toString(result));
-            equation.add("+");
-            txt.clear();
-            label1.setText(inst + result);
+            sonar_cloud_more_like_sonar_bad();
         }
     }
 
@@ -69,7 +74,6 @@ public class FirstFx extends Application {
         button3 = new Button("*");
         button4 = new Button("/");
         button5 = new Button("clear");
-        ArrayList<String> equation = new ArrayList<>();
         txt.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -90,25 +94,25 @@ public class FirstFx extends Application {
         button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                calculate_result(equation, "+");
+                calculate_result("+");
             }
         });
         button2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                calculate_result(equation, "-");
+                calculate_result("-");
             }
         });
         button3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                calculate_result(equation, "*");
+                calculate_result("*");
             }
         });
         button4.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                calculate_result(equation, "/");
+                calculate_result("/");
             }
         });
         button5.setOnAction(new EventHandler<ActionEvent>() {
