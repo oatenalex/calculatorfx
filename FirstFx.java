@@ -24,7 +24,7 @@ public class FirstFx extends Application {
         launch(args);
     }
 
-    public void sonar_cloud_more_like_sonar_bad() {
+    public void sonar_cloud_more_like_sonar_bad(String type) {
         if(equation.contains("+"))
             result = Integer.parseInt(equation.get(0)) + Integer.parseInt(txt.getText());
         if(equation.contains("-"))
@@ -33,9 +33,10 @@ public class FirstFx extends Application {
             result = Integer.parseInt(equation.get(0)) * Integer.parseInt(txt.getText());
         if(equation.contains("/"))
             result = Integer.parseInt(equation.get(0)) / Integer.parseInt(txt.getText());
+        System.out.println(equation);
         equation.clear();
         equation.add(Integer.toString(result));
-        equation.add("+");
+        equation.add(type);
         txt.clear();
         label1.setText(inst + result);
     }
@@ -56,7 +57,7 @@ public class FirstFx extends Application {
             txt.clear();
         }
         else {
-            sonar_cloud_more_like_sonar_bad();
+            sonar_cloud_more_like_sonar_bad(type);
         }
     }
 
