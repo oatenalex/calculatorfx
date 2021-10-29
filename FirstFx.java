@@ -6,7 +6,6 @@ import javafx.stage.Stage;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-
 import java.util.ArrayList;
 
 public class FirstFx extends Application {
@@ -16,6 +15,7 @@ public class FirstFx extends Application {
     Button button3;
     Button button4;
     Button button5;
+    Button logButton;
     TextField txt;
     String inst = " input 2nd # \n result: ";
     int result;
@@ -73,6 +73,7 @@ public class FirstFx extends Application {
         button2 = new Button("-");
         button3 = new Button("*");
         button4 = new Button("/");
+        logButton = new Button("log()");
         button5 = new Button("clear");
         txt.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -124,7 +125,20 @@ public class FirstFx extends Application {
                 label1.setText(" input # \n choose operation \n input 2nd # \n enter key to get result, clear to clear result");
             }
         });
-        root.getChildren().addAll(txt, label1, button1, button2, button3, button4, button5);
+        logButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                if(txt.getText().isEmpty())
+                    label1.setText("please input number first");
+                else {
+                    int num = Integer.parseInt(txt.getText());
+                    double res = Math.log10(num);
+                    label1.setText("log10(" + num + ") = " + res);
+                    txt.clear();
+                }
+            }
+        });
+        root.getChildren().addAll(txt, label1, button1, button2, button3, button4, logButton, button5);
         stage.show();
     }
 }
